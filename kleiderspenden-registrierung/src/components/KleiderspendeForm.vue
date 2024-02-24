@@ -5,15 +5,45 @@
         <h2 class="text-center">Kleiderspende registrieren</h2>
         <form>
           <div class="form-group row mb-3">
-            <label for="name" class="col-sm-3 col-form-label">Name:</label>
+            <label for="firstname" class="col-sm-3 col-form-label">Vorname:</label>
             <div class="col-sm-9">
-              <input type="text" id="name" class="form-control" required>
+              <input type="text" id="firstname" class="form-control">
             </div>
           </div>
           <div class="form-group row mb-3">
-            <label for="email" class="col-sm-3 col-form-label">E-Mail:</label>
+            <label for="lastname" class="col-sm-3 col-form-label">Nachname:</label>
             <div class="col-sm-9">
-              <input type="email" id="email" class="form-control" required>
+              <input type="text" id="lastname" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="steetAndNumber" class="col-sm-3 col-form-label">Straße und Hausnummer:</label>
+            <div class="col-sm-9">
+              <input type="text" id="steetAndNumber" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="city" class="col-sm-3 col-form-label">Stadt</label>
+            <div class="col-sm-9">
+              <input type="text" id="city" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="postalCode" class="col-sm-3 col-form-label">Postleitzahl:</label>
+            <div class="col-sm-9">
+              <input type="number" id="postalCode" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="typeOfClothe" class="col-sm-3 col-form-label">Art der Kleidung:</label>
+            <div class="col-sm-9">
+              <input type="text" id="typeOfClothe" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="crisisArea" class="col-sm-3 col-form-label">Krisengebiet:</label>
+            <div class="col-sm-9">
+              <input type="text" id="crisisArea" class="form-control">
             </div>
           </div>
           <div class="form-group row mb-3">
