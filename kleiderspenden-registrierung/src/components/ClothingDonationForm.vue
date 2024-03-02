@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-10">
         <h2 class="text-center">Kleiderspende registrieren</h2>
-        <form>
+        <form @submit.prevent="handleRegistration">
           <div class="form-group row mb-3">
             <label class="col-sm-3 col-form-label">Art der Übergabe:</label>
             <div class="col-sm-9">
@@ -51,7 +51,7 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Spende registrieren</button>
+          <button type="submit" class="btn btn-primary btn-block">Jetzt spenden</button>
         </form>
       </div>
     </div>
@@ -74,6 +74,11 @@
           crisisArea: '',
         }
       }
-    }
+    },
+    methods: {
+      handleRegistration(){
+        console.log('form submitted')
+      }
+    },
   }
 </script>
