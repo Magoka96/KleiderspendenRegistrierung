@@ -1,13 +1,26 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
+      <div class="col-md-10">
         <h2 class="text-center">Kleiderspende registrieren</h2>
         <form>
           <div class="form-group row mb-3">
+            <label class="col-sm-3 col-form-label">Art der Übergabe:</label>
+            <div class="col-sm-9">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="checkbox1" v-model="collection">
+                <label class="form-check-label" for="checkbox1">Abholung</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="checkbox2" v-model="personalDelivery">
+                <label class="form-check-label" for="checkbox2">Persönlich Übergabe an der Geschäftsstelle</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row mb-3">
             <label for="firstname" class="col-sm-3 col-form-label">Vorname:</label>
             <div class="col-sm-9">
-              <input type="text" id="firstname" class="form-control">
+              <input type="text" id="firstname" class="form-control" v-model="test">
             </div>
           </div>
           <div class="form-group row mb-3">
@@ -46,19 +59,24 @@
               <input type="text" id="crisisArea" class="form-control">
             </div>
           </div>
-          <div class="form-group row mb-3">
-            <label for="uebergabeOption" class="col-sm-3 col-form-label">Übergabeoption:</label>
-            <div class="col-sm-9">
-              <select id="uebergabeOption" class="form-control" required>
-                <option value="">Bitte wählen</option>
-                <option value="persoenlich">Persönliche Übergabe</option>
-                <option value="geschaeftsstelle">Übergabe an der Geschäftsstelle</option>
-              </select>
-            </div>
-          </div>
+
           <button type="submit" class="btn btn-primary btn-block">Spende registrieren</button>
         </form>
+
+        <span> {{ test }}</span>
       </div>
     </div>
   </div>
 </template>
+
+
+<script>
+  export default{
+    name: 'KleiderspendeForm',
+    data(){
+      return {
+        test: ''
+      }
+    }
+  }
+</script>
