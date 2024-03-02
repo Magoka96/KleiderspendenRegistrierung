@@ -1,18 +1,21 @@
 <template>
   <Header></Header>
-     <div class="container-fluid" style="margin-top: 80px;">
+    <div class="container-fluid" style="margin-top: 80px;">
       <router-view/>
     </div>
+  <Footer></Footer>
 </template>
 
 <script>
 
 import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 </script>
