@@ -20,50 +20,48 @@
           <div class="form-group row mb-3">
             <label for="firstname" class="col-sm-3 col-form-label">Vorname:</label>
             <div class="col-sm-9">
-              <input type="text" id="firstname" class="form-control" v-model="test">
+              <input type="text" id="firstname" class="form-control" v-model="formData.firstname">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="lastname" class="col-sm-3 col-form-label">Nachname:</label>
             <div class="col-sm-9">
-              <input type="text" id="lastname" class="form-control">
+              <input type="text" id="lastname" class="form-control" v-model="formData.lastname">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="steetAndNumber" class="col-sm-3 col-form-label">Straße und Hausnummer:</label>
             <div class="col-sm-9">
-              <input type="text" id="steetAndNumber" class="form-control">
+              <input type="text" id="steetAndNumber" class="form-control" v-model="formData.streedAndNumber">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="city" class="col-sm-3 col-form-label">Stadt</label>
             <div class="col-sm-9">
-              <input type="text" id="city" class="form-control">
+              <input type="text" id="city" class="form-control" v-model="formData.city">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="postalCode" class="col-sm-3 col-form-label">Postleitzahl:</label>
             <div class="col-sm-9">
-              <input type="number" id="postalCode" class="form-control">
+              <input type="number" id="postalCode" class="form-control" v-model="formData.postalCode">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="typeOfClothe" class="col-sm-3 col-form-label">Art der Kleidung:</label>
             <div class="col-sm-9">
-              <input type="text" id="typeOfClothe" class="form-control">
+              <input type="text" id="typeOfClothe" class="form-control" v-model="formData.typeOfClothe">
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="crisisArea" class="col-sm-3 col-form-label">Krisengebiet:</label>
             <div class="col-sm-9">
-              <input type="text" id="crisisArea" class="form-control">
+              <input type="text" id="crisisArea" class="form-control" v-model="formData.crisisArea">
             </div>
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">Spende registrieren</button>
         </form>
-
-        <span> {{ test }}</span>
       </div>
     </div>
   </div>
@@ -72,10 +70,20 @@
 
 <script>
   export default{
-    name: 'KleiderspendeForm',
+    name: 'ClothingDonationForm',
     data(){
       return {
-        test: ''
+        formData: {
+          collection: false,
+          personalDelivery: false,
+          firstname: '',
+          lastname: '',
+          streedAndNumber: '',
+          city: '',
+          postalCode: '',
+          typeOfClothe: '',
+          crisisArea: '',
+        }
       }
     }
   }
