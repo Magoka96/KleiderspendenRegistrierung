@@ -72,13 +72,21 @@
           postalCode: '',
           typeOfClothe: '',
           crisisArea: '',
+          currentDateTime: this.getCurrentDateTime()
         }
       }
     },
     methods: {
-      handleRegistration(){
+      handleRegistration() {
         this.$emit('formSubmitted', this.formData);
         console.log('form submitted')
+      },
+      getCurrentDateTime() {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        this.currentDate = now.toLocaleDateString(undefined, options);
+        this.currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+        return `${this.currentDate}, ${this.currentTime} Uhr`;
       }
     },
   }

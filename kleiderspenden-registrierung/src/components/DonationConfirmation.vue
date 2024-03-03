@@ -1,25 +1,28 @@
 <template>
+  <div class="position-fixed container-fluid d-flex align-items-center vh-100 top-0 start-0 bg-black bg-opacity-50">
     <div class="container">
-      <div class="row">
-        <div class="col-md-10">
-          <h2 class="text-center">Bestätigung</h2>
-          <h3 class="text-center">Vielen Dank für deine Spende!</h3>
-          <div class="mb-3">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card-body border border-black rounded-4 p-3 bg-white">
+            <h1 class="card-title text-center"><strong>Bestätigung</strong></h1>
+            <h3 class="card-title text-center mb-4">Vielen Dank für deine Spende!</h3>
             <p><strong>Art der Übergabe:</strong> {{ formData.collection ? 'Abholung' : '' }}{{ formData.personalDelivery ? 'Persönliche Übergabe an der Geschäftsstelle' : '' }}</p>
             <p><strong>Straße und Hausnummer:</strong> {{ formData.streedAndNumber }}</p>
             <p><strong>Stadt:</strong> {{ formData.city }}</p>
             <p><strong>Postleitzahl:</strong> {{ formData.postalCode }}</p>
             <p><strong>Art der Kleidung:</strong> {{ formData.typeOfClothe }}</p>
             <p><strong>Krisengebiet:</strong> {{ formData.crisisArea }}</p>
+            <p><strong>Datum und Uhrzeit:</strong> {{ formData.currentDateTime }}</p>
           </div>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
 
 <script>
-    export default {
+    export default { 
         props: ['formData'],
-        name: 'DonationConfirmation'
+        name: 'DonationConfirmation',
     }
 </script>
