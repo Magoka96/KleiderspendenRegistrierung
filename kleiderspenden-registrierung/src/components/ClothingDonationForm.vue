@@ -26,7 +26,10 @@
           <div class="form-group row mb-3">
             <label for="crisisArea" class="col-sm-3 col-form-label">Krisengebiet:</label>
             <div class="col-sm-9">
-              <input type="text" id="crisisArea" class="form-control" v-model="formData.crisisArea">
+              <select id="crisisArea" class="form-select" v-model="formData.crisisArea">
+                <option value="">Bitte wählen</option>
+                <option v-for="(area, index) in crisisAreas" :key="index" :value="area.value">{{ area.label }}</option>
+              </select>
             </div>
           </div>
           <div v-if="formData.collection">
@@ -59,6 +62,8 @@
 
 
 <script>
+import crisisAreas from '@/assets/data/crisisAreas.json';
+
   export default{
     name: 'ClothingDonationForm',
     data(){
@@ -72,7 +77,8 @@
           typeOfClothe: '',
           crisisArea: '',
           currentDateTime: this.getCurrentDateTime()
-        }
+        },
+        crisisAreas: crisisAreas
       }
     },
     methods: {
