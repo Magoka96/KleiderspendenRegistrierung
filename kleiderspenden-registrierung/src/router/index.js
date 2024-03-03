@@ -1,16 +1,36 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 import ClothingRegistration from "@/views/ClothingRegistration.vue"
 import About from "@/components/About.vue"
+import TermsOfUse from '@/components/Footer/TermsOfUse.vue';
+import PrivacyPolicy from '@/components/Footer/PrivacyPolicy.vue';
+import LegalDisclosure from '@/components/Footer/LegalDisclosure.vue';
 
 const routes = [
     { 
         path: "/Kleiderspende", 
+        name: 'ClothingRegistration',
         component: ClothingRegistration 
     },
     { 
-        path: "/About", 
+        path: '/About', 
+        name: 'About',
         component: About 
-    }
+    },
+    { 
+        path: '/Nutzungsbedingungen',
+        name: 'TermsOfUse',
+        component: TermsOfUse 
+    },
+    { 
+        path: '/Datenschutz',
+        name: 'Datenschutz',
+        component: PrivacyPolicy 
+    },
+    { 
+        path: '/Impressum',
+        name: 'LegalDisclosure',
+        component: LegalDisclosure 
+    },
 ]
 const router = createRouter({
     history: createWebHashHistory(),
