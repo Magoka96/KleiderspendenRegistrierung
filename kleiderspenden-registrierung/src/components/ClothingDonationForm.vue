@@ -17,18 +17,16 @@
               </div>
             </div>
           </div>
-          <div v-if="formData.personalDelivery || formData.collection">
-              <div class="form-group row mb-3">
-              <label for="typeOfClothe" class="col-sm-3 col-form-label">Art der Kleidung:</label>
-              <div class="col-sm-9">
-                <input type="text" id="typeOfClothe" class="form-control" v-model="formData.typeOfClothe">
-              </div>
+          <div class="form-group row mb-3">
+            <label for="typeOfClothe" class="col-sm-3 col-form-label">Art der Kleidung:</label>
+            <div class="col-sm-9">
+              <input type="text" id="typeOfClothe" class="form-control" v-model="formData.typeOfClothe">
             </div>
-            <div class="form-group row mb-3">
-              <label for="crisisArea" class="col-sm-3 col-form-label">Krisengebiet:</label>
-              <div class="col-sm-9">
-                <input type="text" id="crisisArea" class="form-control" v-model="formData.crisisArea">
-              </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="crisisArea" class="col-sm-3 col-form-label">Krisengebiet:</label>
+            <div class="col-sm-9">
+              <input type="text" id="crisisArea" class="form-control" v-model="formData.crisisArea">
             </div>
           </div>
           <div v-if="formData.collection">
