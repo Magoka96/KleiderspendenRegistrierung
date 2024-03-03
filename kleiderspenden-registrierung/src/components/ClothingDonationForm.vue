@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-10">
-        <h2 class="text-center">Kleiderspende registrieren</h2>
+        <h2 class="text-center mb-4">Kleiderspende registrieren</h2>
         <form @submit.prevent="handleRegistration">
           <div class="form-group row mb-3">
             <label class="col-sm-3 col-form-label">Art der Übergabe:</label>
