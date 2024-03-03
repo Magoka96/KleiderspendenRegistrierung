@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <p class="mb-0">&copy; 2024 Kleiderspenden Initative. Alle Rechte vorbehalten.</p>
+            <p class="mb-0">&copy; 2024 Kleiderspenden Initative Stiftung. Alle Rechte vorbehalten.</p>
           </div>
           <div class="col-md-6 text-md-end">
             <ul class="list-inline mb-0">

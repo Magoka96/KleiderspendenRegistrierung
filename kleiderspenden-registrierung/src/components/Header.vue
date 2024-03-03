@@ -15,7 +15,7 @@
             <router-link to="/About" class="nav-link text-light">Über uns</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/" class="nav-link text-light">Kontakt</router-link>
+            <router-link to="/Kontakt" class="nav-link text-light">Kontakt</router-link>
           </li>
         </ul>
       </div>

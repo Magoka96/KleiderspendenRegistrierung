@@ -1,7 +1,7 @@
 <template>
     <div>
       <h1>Legal Disclosure</h1>
-      <p>This is a placeholder for the Legal Disclosure.</p>
+      <p>Dieses Projekt wurde im Rahmen meines Studiums erstellt und dient nur zu Lernzwecken.</p>
     </div>
   </template>
   
