@@ -46,6 +46,7 @@
               <label for="postalCode" class="col-sm-3 col-form-label">Postleitzahl:</label>
               <div class="col-sm-9">
                 <input type="number" id="postalCode" class="form-control" v-model="formData.postalCode">
+                <p v-if="checkPostalCodeAndShowError" class="text-danger">Eine Abholung ist leider nicht möglich. Die Postleitzahl muss in der Nähe der Geschäftsstelle liegen.</p>
               </div>
             </div>
           </div>
@@ -85,7 +86,22 @@
         this.currentDate = now.toLocaleDateString(undefined, options);
         this.currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
         return `${this.currentDate}, ${this.currentTime} Uhr`;
-      }
+      },
     },
+    computed: {
+      checkPostalCodeAndShowError() {
+        const officePostalCode = '73123';
+        const enteredPostalCode = this.formData.postalCode.toString();
+        
+        if (enteredPostalCode.length >= 2) {
+          const enteredFirstTwoDigits = enteredPostalCode.substring(0, 2);
+          const officeFirstTwoDigits = officePostalCode.substring(0, 2);
+          
+          return enteredFirstTwoDigits !== officeFirstTwoDigits;
+        } else {
+          return false;
+        }
+      }
+    }
   }
 </script>
