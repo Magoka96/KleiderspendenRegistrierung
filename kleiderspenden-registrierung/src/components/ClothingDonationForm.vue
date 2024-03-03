@@ -77,6 +77,7 @@
     },
     methods: {
       handleRegistration(){
+        this.$emit('formSubmitted', this.formData);
         console.log('form submitted')
       }
     },

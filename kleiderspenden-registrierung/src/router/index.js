@@ -1,18 +1,17 @@
 import { createRouter, createWebHashHistory } from "vue-router"
-import ClothingDonationForm from "@/components/ClothingDonationForm.vue" // Pfad mit @ für src-Verzeichnis
-import About from "@/components/About.vue" // Pfad mit @ für src-Verzeichnis
+import ClothingRegistration from "@/views/ClothingRegistration.vue"
+import About from "@/components/About.vue"
 
 const routes = [
     { 
         path: "/Kleiderspende", 
-        component: ClothingDonationForm 
+        component: ClothingRegistration 
     },
     { 
         path: "/About", 
         component: About 
     }
 ]
-
 const router = createRouter({
     history: createWebHashHistory(),
     routes: routes,
