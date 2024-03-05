@@ -32,7 +32,7 @@
               </select>
             </div>
           </div>
-          <div v-if="formData.collection">
+          <div v-if="formData.selectedHandoverOption === 'Abholung'">
             <div class="form-group row mb-3">
               <label for="steetAndNumber" class="col-sm-3 col-form-label">Straße und Hausnummer:</label>
               <div class="col-sm-9">
