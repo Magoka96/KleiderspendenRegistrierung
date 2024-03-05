@@ -1,18 +1,18 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-8">
         <h2 class="text-center mb-4">Kleiderspende registrieren</h2>
         <form @submit.prevent="handleRegistration">
           <div class="form-group row mb-3">
             <label class="col-sm-3 col-form-label">Art der Übergabe:</label>
             <div class="col-sm-9">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="collection" v-model="formData.collection">
+                <input class="form-check-input" type="radio" id="collection" value="Abholung" v-model="formData.selectedHandoverOption">
                 <label class="form-check-label" for="collection">Abholung</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="personalDelivery" v-model="formData.personalDelivery">
+                <input class="form-check-input" type="radio" id="personalDelivery" value="Persönliche Übergabe an der Geschäftsstelle" v-model="formData.selectedHandoverOption">
                 <label class="form-check-label" for="personalDelivery">Persönliche Übergabe an der Geschäftsstelle</label>
               </div>
             </div>
@@ -70,6 +70,7 @@ import crisisAreas from '@/assets/data/crisisAreas.json';
       return {
         formData: {
           collection: false,
+          selectedHandoverOption: '',
           personalDelivery: false,
           streedAndNumber: '',
           city: '',

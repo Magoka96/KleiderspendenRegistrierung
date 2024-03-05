@@ -6,7 +6,7 @@
           <div class="card-body border border-black rounded-4 p-3 bg-white">
             <h1 class="card-title text-center"><strong>Bestätigung</strong></h1>
             <h3 class="card-title text-center mb-4">Vielen Dank für deine Spende!</h3>
-            <p><strong>Art der Übergabe:</strong> {{ formData.collection ? 'Abholung' : '' }}{{ formData.personalDelivery ? 'Persönliche Übergabe an der Geschäftsstelle' : '' }}</p>
+            <p><strong>Art der Übergabe:</strong> {{ formData.selectedHandoverOption }} </p>
             <p><strong>Adresse:</strong></p>
             <div v-if="formData.collection">
               <div>
