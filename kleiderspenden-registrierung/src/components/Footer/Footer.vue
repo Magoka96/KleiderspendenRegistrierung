@@ -1,5 +1,5 @@
 <template>
-    <footer class="position-fixed start-0 bottom-0 end-0 bg-dark text-light py-3">
+    <footer class="position-fixed fixed-bottom bg-dark text-light py-3" >
       <div class="container">
         <div class="row">
           <div class="col-md-6">
