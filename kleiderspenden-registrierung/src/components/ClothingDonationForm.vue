@@ -8,11 +8,11 @@
             <label class="col-sm-3 col-form-label">Art der Übergabe:</label>
             <div class="col-sm-9">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="collection" value="Abholung" v-model="formData.selectedHandoverOption">
+                <input class="form-check-input" type="radio" id="collection" value="Abholung" v-model="formData.selectedHandoverOption" name="handoverOption" required>
                 <label class="form-check-label" for="collection">Abholung</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="personalDelivery" value="Persönliche Übergabe an der Geschäftsstelle" v-model="formData.selectedHandoverOption">
+                <input class="form-check-input" type="radio" id="personalDelivery" value="Persönliche Übergabe an der Geschäftsstelle" v-model="formData.selectedHandoverOption" name="handoverOption" required>
                 <label class="form-check-label" for="personalDelivery">Persönliche Übergabe an der Geschäftsstelle</label>
               </div>
             </div>
@@ -20,13 +20,13 @@
           <div class="form-group row mb-3">
             <label for="typeOfClothe" class="col-sm-3 col-form-label">Art der Kleidung:</label>
             <div class="col-sm-9">
-              <input type="text" id="typeOfClothe" class="form-control" v-model="formData.typeOfClothe">
+              <input type="text" id="typeOfClothe" class="form-control" v-model="formData.typeOfClothe" required>
             </div>
           </div>
           <div class="form-group row mb-3">
             <label for="crisisArea" class="col-sm-3 col-form-label">Krisengebiet:</label>
             <div class="col-sm-9">
-              <select id="crisisArea" class="form-select" v-model="formData.crisisArea">
+              <select id="crisisArea" class="form-select" v-model="formData.crisisArea" required>
                 <option value="">Bitte wählen</option>
                 <option v-for="(area, index) in crisisAreas" :key="index" :value="area.value">{{ area.label }}</option>
               </select>
@@ -36,20 +36,20 @@
             <div class="form-group row mb-3">
               <label for="steetAndNumber" class="col-sm-3 col-form-label">Straße und Hausnummer:</label>
               <div class="col-sm-9">
-                <input type="text" id="steetAndNumber" class="form-control" v-model="formData.streedAndNumber">
+                <input type="text" id="steetAndNumber" class="form-control" v-model="formData.streedAndNumber" required>
               </div>
             </div>
             <div class="form-group row mb-3">
               <label for="city" class="col-sm-3 col-form-label">Stadt</label>
               <div class="col-sm-9">
-                <input type="text" id="city" class="form-control" v-model="formData.city">
+                <input type="text" id="city" class="form-control" v-model="formData.city" required>
               </div>
             </div>
             <div class="form-group row mb-3">
               <label for="postalCode" class="col-sm-3 col-form-label">Postleitzahl:</label>
               <div class="col-sm-9">
-                <input type="number" id="postalCode" class="form-control" v-model="formData.postalCode">
-                <p v-if="checkPostalCodeAndShowError" class="text-danger">Eine Abholung ist leider nicht möglich. Die Postleitzahl muss in der Nähe der Geschäftsstelle liegen.</p>
+                <input type="number" id="postalCode" class="form-control" v-model="formData.postalCode" required>
+                <p v-if="checkPostalCodeAndShowError" class="text-danger">Eine Abholung ist leider nicht möglich. Die Postleitzahl muss in der Nähe der Geschäftsstelle liegen (73123).</p>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ import crisisAreas from '@/assets/data/crisisAreas.json';
       return {
         formData: {
           collection: false,
-          selectedHandoverOption: '',
+          selectedHandoverOption: 'Abholung',
           personalDelivery: false,
           streedAndNumber: '',
           city: '',
