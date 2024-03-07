@@ -1,6 +1,6 @@
 <template>
   <Header></Header>
-    <div class="container-fluid" style="margin-top: 80px;">
+    <div class="container-fluid" style="margin-top: 120px;">
       <router-view/>
     </div>
   <Footer></Footer>
