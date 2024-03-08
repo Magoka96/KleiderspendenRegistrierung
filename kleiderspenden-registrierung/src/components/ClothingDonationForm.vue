@@ -85,7 +85,6 @@ import crisisAreas from '@/assets/data/crisisAreas.json';
     methods: {
       handleRegistration() {
         this.$emit('formSubmitted', this.formData);
-        console.log('form submitted')
       },
       getCurrentDateTime() {
         const now = new Date();
