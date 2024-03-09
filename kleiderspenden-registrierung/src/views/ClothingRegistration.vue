@@ -29,6 +29,7 @@
 
         const formDataStore = useFormDataStore();
         formDataStore.setFormData(formData);
+        formDataStore.markFormSubmitted();
 
         router.push('/DonationConfirmation')
       }

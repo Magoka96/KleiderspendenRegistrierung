@@ -6,6 +6,8 @@ import Contact from "@/components/Contact.vue";
 import TermsOfUse from '@/components/Footer/TermsOfUse.vue';
 import PrivacyPolicy from '@/components/Footer/PrivacyPolicy.vue';
 import LegalDisclosure from '@/components/Footer/LegalDisclosure.vue';
+import { useFormDataStore } from '@/store/formDataStore';
+
 
 const routes = [
     { 
@@ -49,5 +51,14 @@ const router = createRouter({
     routes: routes,
     linkActivesClass: "active"
 })
+
+router.beforeEach((to, from, next) => {
+    const formSubmitted = useFormDataStore().formSubmitted;
+    if (to.name === 'DonationConfirmation' && !formSubmitted) {
+      next({ name: 'ClothingRegistration' });
+    } else {
+      next();
+    }
+  });
 
 export default router
