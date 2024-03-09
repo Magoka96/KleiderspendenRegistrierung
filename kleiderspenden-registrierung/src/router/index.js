@@ -11,12 +11,12 @@ import { useFormDataStore } from '@/store/formDataStore';
 
 const routes = [
     { 
-        path: '/Kleiderspende', 
+        path: '/Kleiderspende/Registrierung', 
         name: 'ClothingRegistration',
         component: ClothingRegistration 
     },
     {
-        path: '/DonationConfirmation',
+        path: '/Kleiderspende/Bestaetigung',
         name: 'DonationConfirmation',
         component: DonationConfirmation
     },
@@ -55,10 +55,12 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     const formSubmitted = useFormDataStore().formSubmitted;
     if (to.name === 'DonationConfirmation' && !formSubmitted) {
-      next({ name: 'ClothingRegistration' });
+        next({ name: 'ClothingRegistration' });
+    } else if (to.path === '/') {
+        next('/Kleiderspende/Registrierung');
     } else {
-      next();
+        next();
     }
-  });
+});
 
 export default router

@@ -31,7 +31,7 @@
         formDataStore.setFormData(formData);
         formDataStore.markFormSubmitted();
 
-        router.push('/DonationConfirmation')
+        router.push('/Kleiderspende/Bestaetigung')
       }
     }
   };
