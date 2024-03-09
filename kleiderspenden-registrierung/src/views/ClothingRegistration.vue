@@ -9,6 +9,7 @@
   import ClothingDonationForm from '@/components/ClothingDonationForm.vue';
   import DonationConfirmation from '@/components/DonationConfirmation.vue';
   import { useFormDataStore } from '@/store/formDataStore';
+  import router from '@/router'
 
   export default {
     components: {
@@ -29,7 +30,7 @@
         const formDataStore = useFormDataStore();
         formDataStore.setFormData(formData);
 
-        //router.push('/DonationConfirmation')
+        router.push('/DonationConfirmation')
       }
     }
   };
