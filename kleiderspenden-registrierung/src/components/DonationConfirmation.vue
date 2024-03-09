@@ -27,8 +27,17 @@
 </template>
 
 <script>
-    export default { 
-        props: ['formData'],
-        name: 'DonationConfirmation',
-    }
+  import { useFormDataStore } from '@/store/formDataStore';
+
+  export default { 
+      name: 'DonationConfirmation',
+      setup() {
+        const formDataStore = useFormDataStore();
+        const formData = formDataStore.formData;
+
+        return {
+          formData
+        };
+      }
+  };
 </script>
