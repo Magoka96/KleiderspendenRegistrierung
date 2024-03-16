@@ -18,7 +18,15 @@ const routes = [
     {
         path: '/Kleiderspende/Bestaetigung',
         name: 'DonationConfirmation',
-        component: DonationConfirmation
+        component: DonationConfirmation,
+        beforeEnter: (to, from, next) => {
+            const formSubmitted = useFormDataStore().formSubmitted;
+            if (!formSubmitted) {
+                next({ name: 'ClothingRegistration' });
+            } else {
+                next();
+            }
+        }
     },
     { 
         path: '/About', 
@@ -53,10 +61,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    const formSubmitted = useFormDataStore().formSubmitted;
-    if (to.name === 'DonationConfirmation' && !formSubmitted) {
-        next({ name: 'ClothingRegistration' });
-    } else if (to.path === '/') {
+    if (to.path === '/') {
         next('/Kleiderspende/Registrierung');
     } else {
         next();
