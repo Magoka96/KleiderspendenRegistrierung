@@ -7,7 +7,7 @@
           <h3 class="card-title text-center mb-4">Vielen Dank für deine Spende!</h3>
           <p><strong>Art der Übergabe:</strong> {{ formData.selectedHandoverOption }} </p>
           <p><strong>Adresse:</strong></p>
-          <div v-if="formData.collection">
+          <div v-if="formData.selectedHandoverOption === 'Abholung'">
             <div>
               <p>{{ formData.streedAndNumber }}</p>
               <p>{{ formData.city }}, {{ formData.postalCode }}</p>

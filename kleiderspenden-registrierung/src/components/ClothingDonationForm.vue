@@ -50,6 +50,7 @@
               <div class="col-sm-9">
                 <input type="number" id="postalCode" class="form-control" v-model="formData.postalCode" required>
                 <p v-if="checkPostalCodeAndShowError" class="text-danger">Eine Abholung ist leider nicht möglich. Die Postleitzahl muss in der Nähe der Geschäftsstelle liegen (73123).</p>
+                <p v-if="invalidPostalCode" class="text-danger">Die Postleitzahl muss aus 5 Zahlen bestehen.</p>
               </div>
             </div>
           </div>
@@ -79,12 +80,19 @@ import crisisAreas from '@/assets/data/crisisAreas.json';
           crisisArea: '',
           currentDateTime: this.getCurrentDateTime()
         },
-        crisisAreas: crisisAreas
+        crisisAreas: crisisAreas,
+        invalidPostalCode: false
       }
     },
     methods: {
       handleRegistration() {
-        this.$emit('formSubmitted', this.formData);
+        if(!this.checkPostalCodeAndShowError && this.hasPostalCodeFiveNumbers() && this.validateNumeric()){
+          this.$emit('formSubmitted', this.formData);
+        }
+        else {
+          this.invalidPostalCode = true;
+        }
+        
       },
       getCurrentDateTime() {
         const now = new Date();
@@ -93,6 +101,13 @@ import crisisAreas from '@/assets/data/crisisAreas.json';
         this.currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
         return `${this.currentDate}, ${this.currentTime} Uhr`;
       },
+      hasPostalCodeFiveNumbers() {
+        const postalCodeRegex = /^\d{5}$/;
+        return postalCodeRegex.test(this.formData.postalCode);
+      },
+      validateNumeric() {
+        return /^\d+$/.test(this.formData.postalCode);
+      }
     },
     computed: {
       checkPostalCodeAndShowError() {
@@ -103,7 +118,8 @@ import crisisAreas from '@/assets/data/crisisAreas.json';
           const enteredFirstTwoDigits = enteredPostalCode.substring(0, 2);
           const officeFirstTwoDigits = officePostalCode.substring(0, 2);
           
-          return enteredFirstTwoDigits !== officeFirstTwoDigits;
+          return enteredFirstTwoDigits !== officeFirstTwoDigits 
+           
         } else {
           return false;
         }
