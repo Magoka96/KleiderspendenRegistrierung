@@ -63,7 +63,7 @@
 
 
 <script>
-import crisisAreas from '@/assets/data/crisisAreas.json';
+  import crisisAreas from '@/assets/data/crisisAreas.json';
 
   export default{
     name: 'ClothingDonationForm',
