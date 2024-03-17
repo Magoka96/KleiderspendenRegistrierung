@@ -1,9 +1,11 @@
 <template>
-  <Header></Header>
-    <div class="container-fluid" style="margin-top: 120px;">
+  <div id="app" class="d-flex flex-column min-vh-100">
+    <Header></Header>
+    <div class="container-fluid flex-grow-1 mb-3">
       <router-view/>
     </div>
-  <Footer></Footer>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
@@ -20,11 +22,9 @@ export default {
 }
 </script>
 
-<style>
-
-  body{
-    margin-bottom: 110px;
+<style scoped>
+  body, #app {
+    height: 100%;
     margin-top: 100px;
   }
-  
 </style>
