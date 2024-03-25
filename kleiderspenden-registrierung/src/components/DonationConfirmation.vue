@@ -29,15 +29,12 @@
 <script>
   import { useFormDataStore } from '@/store/formDataStore';
 
-  export default { 
-      name: 'DonationConfirmation',
-      setup() {
-        const formDataStore = useFormDataStore();
-        const formData = formDataStore.formData;
-
-        return {
-          formData
-        };
-      }
+  export default {
+    name: 'DonationConfirmation',
+    data() {
+      return {
+        formData: useFormDataStore().formData
+      };
+    }
   };
 </script>

@@ -86,13 +86,16 @@
     },
     methods: {
       handleRegistration() {
-        if(!this.checkPostalCodeAndShowError && this.hasPostalCodeFiveNumbers() && this.validateNumeric()){
+        if(this.isPostalCodeValid() || this.formData.selectedHandoverOption !== 'Abholung'){
           this.$emit('formSubmitted', this.formData);
         }
         else {
           this.invalidPostalCode = true;
         }
         
+      },
+      isPostalCodeValid(){
+        return !this.checkPostalCodeAndShowError && this.hasPostalCodeFiveNumbers() && this.validateNumeric();
       },
       getCurrentDateTime() {
         const now = new Date();
