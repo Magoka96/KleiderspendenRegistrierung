@@ -56,8 +56,7 @@ const routes = [
 ]
 const router = createRouter({
     history: createWebHashHistory(),
-    routes: routes,
-    linkActivesClass: "active"
+    routes: routes
 })
 
 router.beforeEach((to, from, next) => {
