@@ -64,6 +64,8 @@
 
 <script>
   import crisisAreas from '@/assets/data/crisisAreas.json';
+  import { useFormDataStore } from '@/store/formDataStore';
+  import router from '@/router'
 
   export default{
     name: 'ClothingDonationForm',
@@ -87,7 +89,11 @@
     methods: {
       handleRegistration() {
         if(this.isPostalCodeValid() || this.formData.selectedHandoverOption !== 'Abholung'){
-          this.$emit('formSubmitted', this.formData);
+          const formDataStore = useFormDataStore();
+          formDataStore.setFormData(this.formData);
+          formDataStore.markFormSubmitted();
+
+          router.push('/Kleiderspende/Bestaetigung')
         }
         else {
           this.invalidPostalCode = true;

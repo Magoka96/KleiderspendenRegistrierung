@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import ClothingRegistration from "@/views/ClothingRegistration.vue";
 import DonationConfirmation from "@/components/DonationConfirmation.vue";
 import About from "@/components/Header/About.vue";
 import Contact from "@/components/Header/Contact.vue";
@@ -7,13 +6,14 @@ import TermsOfUse from '@/components/Footer/TermsOfUse.vue';
 import PrivacyPolicy from '@/components/Footer/PrivacyPolicy.vue';
 import LegalDisclosure from '@/components/Footer/LegalDisclosure.vue';
 import { useFormDataStore } from '@/store/formDataStore';
+import ClothingDonationForm from "@/components/ClothingDonationForm.vue";
 
 
 const routes = [
     { 
         path: '/Kleiderspende/Registrierung', 
-        name: 'ClothingRegistration',
-        component: ClothingRegistration 
+        name: 'ClothingDonationForm',
+        component: ClothingDonationForm 
     },
     {
         path: '/Kleiderspende/Bestaetigung',
