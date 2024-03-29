@@ -98,10 +98,6 @@
         else {
           this.invalidPostalCode = true;
         }
-        
-      },
-      isPostalCodeValid(){
-        return !this.checkPostalCodeAndShowError && this.hasPostalCodeFiveNumbers() && this.validateNumeric();
       },
       getCurrentDateTime() {
         const now = new Date();
@@ -109,6 +105,9 @@
         this.currentDate = now.toLocaleDateString(undefined, options);
         this.currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
         return `${this.currentDate}, ${this.currentTime} Uhr`;
+      },
+      isPostalCodeValid(){
+        return !this.checkPostalCodeAndShowError && this.hasPostalCodeFiveNumbers() && this.validateNumeric();
       },
       hasPostalCodeFiveNumbers() {
         const postalCodeRegex = /^\d{5}$/;
