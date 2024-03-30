@@ -25,6 +25,6 @@ export default {
 <style scoped>
   body, #app {
     height: 100%;
-    margin-top: 100px;
+    padding-top: 100px;
   }
 </style>
