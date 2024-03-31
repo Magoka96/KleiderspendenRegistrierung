@@ -2,7 +2,9 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary border border-black border-bottom fixed-top">
       <div class="container fluid">
-        <img src="@/assets/iu-logo.png" alt="Logo" class="navbar-brand img-fluid" style="max-height: 60px;">
+        <router-link to="/Kleiderspende/Registrierung">
+          <img src="@/assets/iu-logo.png" alt="Logo" class="img-fluid" style="max-height: 60px;">
+        </router-link>
         <router-link to="/Kleiderspende/Registrierung" class="navbar-brand">Kleiderspenden</router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
